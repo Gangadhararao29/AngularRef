@@ -1,0 +1,61 @@
+<!-- <p>postsdetail works!</p>
+
+<div class="container">
+    <ul class="list-group">
+        <li class="list-group-item list-group-item-success">ID: {{post.id}}</li>
+        <li class="list-group-item list-group-item-success">Name: {{post.name}}</li>
+        <li class="list-group-item list-group-item-success">Username: {{post.username}}</li>
+        <li class="list-group-item list-group-item-success">Email: {{post.email}}</li>
+        <li class="list-group-item list-group-item-success">Address: </li>
+        <ul>
+            <li class="list-group-item list-group-item-info">Street: {{post.address.street}}</li>
+            <li class="list-group-item list-group-item-info">Suite: {{post.address.suite}}</li>
+            <li class="list-group-item list-group-item-info">City: {{post.address.city}}</li>
+            <li class="list-group-item list-group-item-info">Zipcode: {{post.address.zipcode}}</li>
+            <li class="list-group-item list-group-item-info">Geographical Co-ordinates: </li>
+            <ul>
+                <li class="list-group-item list-group-item-warning">Latitude: {{post.address.geo.lat}}</li>
+                <li class="list-group-item list-group-item-warning">Longitude: {{post.address.geo.lng}}</li>
+            </ul>
+        </ul>
+        <li class="list-group-item list-group-item-success">Phone :{{post.address.phone}}</li>
+        <li class="list-group-item list-group-item-success">Website:{{post.address.website}}</li>
+    </ul>
+</div> -->
+
+<div class="container bg-warning">
+    <div class="d-flex p-3 fs-2 fw-bold justify-content-between">
+        <div>Id: {{post.id}} </div>
+        <div>Name: {{post.name}}</div>
+        <div>Username: {{post.username}}</div>
+    </div>
+    <div>
+        <div class="card-group">
+            <div class="card text-success">
+              <div class="card-body">
+                <h5 class="card-title">Address</h5>
+                <p class="card-text">
+                  Street: {{post.address.street}},<br>
+                  Suite: {{post.address.suite}},<br>
+                  City: {{post.address.city}},<br>
+                  Zipcode: {{post.address.zipcode}}.
+              </p>
+              </div>
+            </div>
+            <div class="card text-success">
+              <div class="card-body">
+                <h5 class="card-title">Email: {{post.email}}</h5>
+                <h5 class="card-title">Company: {{post.company.name}}</h5>
+                <p class="card-text">{{post.company.catchPhrase}}<br>{{post.company.bs}}</p>
+              </div>
+            </div>
+    </div>
+  
+          <div class="d-flex text-muted p-3 fs-5 fw-bold justify-content-between">
+                <div>Phone: {{post.phone}} </div>
+                <div>Website: {{post.website}}</div>
+           
+          </div>
+    </div>
+
+</div>

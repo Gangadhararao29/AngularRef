@@ -1,0 +1,31 @@
+*{
+    box-sizing: border-box;
+}
+
+
+.sideheading {
+    width:35%;
+   color:blue;
+    display: inline-block;
+    margin: auto;
+    vertical-align: top;
+    padding: 25px;
+}
+p {
+    line-height:162%;
+    color:black;
+}
+
+h6 {
+    font-size: larger;
+    padding: 0%;
+    margin: 0%;
+    color: blue;
+}
+
+.main{
+    width: 60%;
+    display: inline-block;
+    margin: auto;
+    padding: 20px;
+}

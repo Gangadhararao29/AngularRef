@@ -1,0 +1,17 @@
+<p style="text-align: center;">course works!</p>
+
+
+<p style="font-size: larger; text-align: center;">Following are the list of courses available</p>
+    <hr>
+
+<div class='main'> 
+    <div class="sideheading">
+        <ul>
+        <li *ngFor='let course of courses'> <a routerLink='/course/{{course.link}}'>{{course.name}}</a> </li>
+        </ul>
+    </div>
+
+<div class="maincontent">
+    <router-outlet></router-outlet>
+</div>
+</div>

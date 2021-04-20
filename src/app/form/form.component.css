@@ -1,0 +1,27 @@
+
+.new{
+    border: 2px solid black;
+    padding:20px;
+    margin-top:30px;
+}
+
+.new input {
+    padding:10px;
+    margin-bottom:5px;
+    border-color: blue;
+}
+.new select{
+    width:220px;
+    margin-bottom: 12px;
+}
+
+p {
+    font-size: medium;
+}
+
+.main{
+    box-sizing: border-box;
+    padding: 50px;
+    margin: 0 20px;
+    background-color: azure;
+}

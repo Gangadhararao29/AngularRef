@@ -1,0 +1,27 @@
+<p>posts works! Styles added and also Subscription data ended on closing the component</p>
+
+<!-- <p>posts works!</p>
+<ul>
+  <li *ngFor="let postObject of postArray">
+    <a routerLink="" (click)="gotoPostDetails(postObject.id)">
+        {{postObject.id}}</a>
+  </li>
+</ul> -->
+
+<div class="container">
+    <table class="table table-bordered border-success table-striped table-hover text-center">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let postObject of postArray">
+            <td ><a class="text-success " routerLink="" (click)="gotoPostDetails(postObject.id)">{{postObject.id}}</a></td>
+            <td>{{postObject.name}}</td>
+          </tr>
+        </tbody>
+      </table>
+</div>
+

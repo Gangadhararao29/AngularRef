@@ -1,0 +1,98 @@
+<div class="main">
+    <p>form works!</p>
+<div class="new">
+    <form #reg = 'ngForm' (ngSubmit)='onClickSubmit(reg.value)' >
+        <input type="text" name='usrname' id='usrname' placeholder="username" ngModel><br>
+        <input type="password" name='password' id='password' placeholder="password" ngModel>
+        <br>
+        <input type="date" id='date' name="date" placeholder='date of birth' ngModel>
+        <br>
+        <p>Select your PG course and fav subject</p>
+        <input type="radio" name='branch' id='mca' value="mca" ngModel (change)='selectBranch1()'>
+        <label for="mca">MCA</label>
+        <input type="radio" name='branch' id='mba' value="mba" ngModel (change)='selectBranch2()'>
+        <label for="mba">MBA</label><br>
+        <label for="s"></label>
+        <select name='courses' id='courses' ngModel>
+            <option [value]=x *ngFor="let x of selectedBranch">{{x}}</option>
+        </select>
+        <br>
+
+        <input type="radio" name='topic' id='html' value="html" ngModel (change)='selectHTML()'>
+        <label for='html'>HTML</label>
+        <br>
+        <input type="radio" name='topic' id='bootstrap' value="bootstrap" ngModel (change)='selectBootstrap()'>
+        <label for='html'>Bootstrap</label>
+        <br>
+        <input type="radio" name='topic' id='ts' value="TypeScript" ngModel (change)='selectTS()'>
+        <label for='html'>TypeScript</label>
+        <br>
+        <input type="radio" name='topic' id='js' value="JavaScript" ngModel (change)='selectJS()'>
+        <label for='html'>JavaScript</label>
+        <br>
+
+        <label for="course">Topics</label><br>
+        <select name='topicList' id='select' ngModel >
+            <option [value]=x *ngFor="let x of selectedCourses">{{x}}</option>
+        </select>
+        <br>
+
+        <input type='radio' name='state' id='st' value="telangana" ngModel (change)='seletTsCities()'>
+        <label for='st'>Telangana</label>
+        <input type="radio" name='state' id="sa" value="Andhra pradesh" ngModel (change)='selectApCities()'>
+        <label for='sa'>Andhra Pradesh</label>
+        <br>
+        <label for="s">Select state</label><br>
+        <select name='city' id='s' ngModel>
+            <option [value]=x *ngFor="let x of selectedCities">{{x}}</option>
+        </select>
+        <br>
+        <input type='submit' value="Register">
+    </form>
+</div>
+</div>
+
+<div class="main">
+
+    <table border="1" cellspacing='0' cellpadding='15'>
+    <thead>
+      <tr>
+        <th>User name</th>
+        <th>Date Of Birth</th>
+        <th>City</th>
+        <th>State</th>
+        <th>Course</th>
+        <th>Topic</th>
+        <th>topicList</th>
+        <th>Fav Subject</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let i of arr1">
+        <td>{{i.usrname}}</td>
+        <td>{{i.date}}</td>
+        <td>{{i.city}}</td>
+        <td>{{i.state}}</td>
+        <td>{{i.branch}}</td>
+        <td>{{i.topic}}</td>
+        <td>{{i.topicList}}</td>
+        <td>{{i.courses}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <br>
+  <br>
+<br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+
+  <br>
+
+</div>

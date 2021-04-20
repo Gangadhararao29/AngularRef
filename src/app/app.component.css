@@ -1,0 +1,21 @@
+.heading{
+    font-size: xx-large;
+    color:red;
+    text-align: center;
+}
+.main {
+    background-color:cornsilk;
+    padding: 15px;
+
+}
+.main a {
+    text-decoration: none;
+    padding:15px;
+    font-size: x-large;
+    margin:10px ;
+    color:red; 
+}
+
+.main a:hover{
+    border: 2px solid red;
+}
