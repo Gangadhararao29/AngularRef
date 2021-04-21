@@ -1,0 +1,245 @@
+<div class="container m-3">
+
+    <!-- HEADINGS -->
+      <h1 class="col-md-8 my-3 mx-auto">Form Validation</h1>
+      <form [formGroup]="form" (ngSubmit)="onClickSubmit(form.value)" novalidate>
+    
+    <!-- USERNAME -->
+        <div class="row mb-3">
+          <div class="col-md-8 m-auto"  >
+            <input  
+              type="text"
+              class="form-control"
+              [class.is-invalid]="form.get('userName').invalid && form.get('userName').touched"
+              [class.is-valid]="!form.get('userName').invalid"
+              id="colFormLabel"
+              name="userName"
+              placeholder="Associate Name"
+              formControlName="userName"
+            />
+        </div>
+    <!-- VALIDATION -->
+          <div *ngIf="form.get('userName').errors?.required && form.get('userName').touched" class="col-md-8 m-auto">
+            <small class="text-danger">*Please enter the Associate Name</small>
+          </div>
+          <div *ngIf="form.get('userName').errors?.pattern && form.get('userName').touched" class="col-md-8 m-auto">
+            <small class="text-danger">*Accepts Alphabets, space &
+                Min 5 to Max 30 Char</small>
+          </div>
+        </div>
+    
+    <!-- USERID -->
+        <div class="row mb-3">
+          <div class="col-md-8 m-auto">
+            <input   
+              type="text"
+              class="form-control"
+              [class.is-invalid]="form.get('userId').invalid && form.get('userId').touched"
+              [class.is-valid]="!form.get('userId').invalid"
+              id="colFormLabel"
+              name="userId"
+              placeholder="Associate ID"
+              formControlName="userId"
+            />
+          </div>
+    <!-- VALIDATION -->
+          <div *ngIf="form.get('userId').errors?.required && form.get('userId').touched" class="col-md-8 m-auto">
+            <small class="text-danger">*Please enter the Associate Id</small>
+          </div>
+          <div *ngIf="form.get('userId').errors?.pattern && form.get('userId').touched" class="col-md-8 m-auto">
+            <small class="text-danger">*Invalid Associate Id (Please enter your 6-digit Associate Id)</small>
+          </div>
+        </div>
+    
+    <!-- PROJECT ID -->
+        <div class="row mb-3">
+          <div class="col-md-8 m-auto">
+            <input  
+              type="text"
+              class="form-control"
+              [class.is-invalid]="form.get('projectId').invalid && form.get('projectId').touched"
+              [class.is-valid]="!form.get('projectId').invalid"
+              id="colFormLabel"
+              name="projectId"
+              placeholder="Project ID"
+              formControlName="projectId"
+            />
+          </div>
+    <!-- VALIDATION -->
+          <div *ngIf="form.get('projectId').errors?.required && form.get('projectId').touched" class="col-md-8 m-auto">
+            <small class="text-danger">*Please enter the Project Id</small>
+          </div>
+          <div *ngIf="form.get('projectId').errors?.pattern && form.get('projectId').touched" class="col-md-8 m-auto">
+            <small class="text-danger">*Invalid Project Id (Please enter your 12-digit Project Id)</small>
+          </div>
+         </div>
+    
+    <!-- Radio buttons -->
+        <div class="row mb-3">
+          <div class="col-md-8 m-auto">
+            <div class="form-check d-inline-block">
+              <input  
+                class="form-check-input"
+                type="radio"
+                name="location"
+                value="Offshore"
+                id="flexRadioDefault1"
+                formControlName="location"
+              />
+              <label class="form-check-label" for="flexRadioDefault1"
+                >Off Shore</label
+              >
+            </div>
+            <div class="form-check mx-3 d-inline-block">
+              <input  
+                class="form-check-input"
+                type="radio"
+                name="location"
+                value="Onshore"
+                id="flexRadioDefault2"
+                formControlName="location"
+              />
+              <label class="form-check-label" for="flexRadioDefault2"
+                >On Shore</label
+              >
+            </div>
+          </div>
+        </div>
+    
+    <!-- Select Menu -->
+    <!-- Default -->
+        <div *ngIf="!form.value.location" class="row mb-3">
+            <div class="col-md-8 m-auto">
+              <select
+                class="form-select"
+                aria-label="Default select example"
+                formControlName="locationDetail"
+                [class.is-invalid]="form.get('locationDetail').invalid && form.get('locationDetail').touched"
+                [class.is-valid]="!form.get('locationDetail').invalid"
+              >
+              <option selected value="">Select Location</option>
+              </select>
+            </div>
+            <!-- VALIDATION -->
+            <div *ngIf="form.get('locationDetail').errors?.required && form.get('locationDetail').touched" class="col-md-8 m-auto">
+                <small class="text-danger">*Please select the location</small>
+              </div>
+          </div>
+    <!-- Option Offshore -->
+        <div *ngIf="form.value.location=='Offshore'" class="row mb-3">
+          <div class="col-md-8 m-auto">
+            <select
+              class="form-select"
+              aria-label="Default select example"
+              formControlName="locationDetail"
+              [class.is-invalid]="form.get('locationDetail').invalid"
+              [class.is-valid]="!form.get('locationDetail').invalid"
+            >
+            <option selected value="">Select Location</option>
+              <option *ngFor="let item of offShoreData" value="{{item}}">{{item}}</option>
+            </select>
+          </div>
+          <!-- VALIDATION -->
+          <div *ngIf="form.get('locationDetail').errors?.required && form.get('locationDetail').touched" class="col-md-8 m-auto">
+            <small class="text-danger">*Please select the location</small>
+          </div>
+        </div>
+    <!-- Option Onshore -->
+        <div *ngIf="form.value.location=='Onshore'" class="row mb-3">
+            <div class="col-md-8 m-auto">
+              <select
+                class="form-select"
+                aria-label="Default select example"
+                formControlName="locationDetail"
+                [class.is-invalid]="form.get('locationDetail').invalid "
+                [class.is-valid]="!form.get('locationDetail').invalid"
+              >
+              <option selected value="">Select Location</option>
+                <option *ngFor="let item of onShoreData" value="{{item}}">{{item}}</option>
+              </select>
+            </div>
+            <!-- VALIDATION -->
+            <div *ngIf="form.get('locationDetail').errors?.required && form.get('locationDetail').touched" class="col-md-8 m-auto">
+                <small class="text-danger">*Please select the location</small>
+              </div>
+          </div>
+    
+    <!-- CheckBox -->
+        <div class="row mb-3">
+          <div class="col-md-8 m-auto">
+            <div *ngFor="let control of skillsArray.controls; let i=index;" class="form-check form-check-inline col-md-3 ">
+              <input 
+                class="form-check-input"
+                type="checkbox"
+                id="skill{{i}}"
+                value="control{{i}}"
+                [formControl]="control"
+                (change)="getSelectedSkillsValue()"
+              />
+              <label  class="form-check-label" for="skill{{i}}">{{skillsData[i]}}</label>
+            </div>
+          </div>
+          <!-- VALIDATION -->
+          <div *ngIf="!skillsValidation && form.get('skills').touched" class="col-md-8 m-auto">
+            <small class="text-danger">*Please choose atleast Five</small>
+          </div>
+        </div>
+        
+    
+    <!-- Input File  -->
+        <div class="row mb-3">
+            
+          <div class="col-md-2"></div>
+          <div class="col-md-6">
+            <label class="mb-2" for="inputGroupFile02">Upload Profile Picture</label>
+            <div class="input-group mb-3">
+              <input  
+                type="file"
+                name="inputFile"
+                class="form-control"
+                id="inputGroupFile02"
+                [class.is-invalid]="form.get('inputFile').invalid && form.get('inputFile').touched"
+                [class.is-valid]="!form.get('inputFile').invalid"
+                formControlName="inputFile"
+              />
+            </div>
+          </div>
+        <!-- VALIDATION -->
+        <div *ngIf="form.get('inputFile').errors?.required && form.get('inputFile').touched" class="col-md-8 m-auto">
+            <small class="text-danger">*Please upload profile picture</small>
+          </div>
+      </div>
+    
+    <!-- Comments -->
+        <div class="row mb-3">
+          <div class="col-md-8 m-auto">
+            <textarea  
+              class="form-control"
+              name="comments"
+              id="colFormLabel"
+              [class.is-invalid]="form.get('comments').invalid && form.get('comments').touched"
+                [class.is-valid]="!form.get('comments').invalid"
+              placeholder="Comments"
+              formControlName="comments"
+            ></textarea>
+          </div>
+         <!-- VALIDATION -->
+         <div *ngIf="form.get('comments').errors?.required && form.get('comments').touched" class="col-md-8 m-auto">
+            <small class="text-danger">*Please enter comments</small>
+          </div>
+      </div>
+    
+    <!-- Buttons -->
+        <div class="row mb-3">
+          <div class="col-md-8 m-auto">
+            <input type="submit" class="btn btn-primary" [class.disabled]="form.invalid || !skillsValidation"/>
+            <button class="class btn btn-danger" (click)="resetForm()">Reset</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    
+    <div class="container bg-warning">
+    <pre class="fs-5">{{ form.value | json }}</pre>
+    </div> 
+    

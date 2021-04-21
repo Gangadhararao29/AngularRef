@@ -7,9 +7,8 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { CourseComponent } from './course/course.component';
 import { FormComponent } from './form/form.component';
-import { ExperimentComponent } from './experiment/experiment.component';
 
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PostsComponent } from './posts/posts.component';
 import { Posts2Component } from './posts2/posts.component';
 import { PostsdetailComponent } from './postsdetail/postsdetail.component';
@@ -21,6 +20,7 @@ import { BehSubjectComponent } from './beh-subject/beh-subject.component';
 import { FirstComponent } from './beh-subject/first/first.component';
 import { SecondComponent } from './beh-subject/second/second.component';
 import { ThirdComponent } from './beh-subject/third/third.component';
+import { ReactiveformsComponent } from './reactiveforms/reactiveforms.component';
 
 
 
@@ -31,7 +31,6 @@ import { ThirdComponent } from './beh-subject/third/third.component';
     AboutComponent,
     CourseComponent,
     FormComponent,
-    ExperimentComponent,
     PostsComponent,
     PostsdetailComponent,
     HtmlcourseComponent,
@@ -41,13 +40,15 @@ import { ThirdComponent } from './beh-subject/third/third.component';
     BehSubjectComponent,
     FirstComponent,
     SecondComponent,
-    ThirdComponent
+    ThirdComponent,
+    ReactiveformsComponent
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule
   ],
   providers: [],
